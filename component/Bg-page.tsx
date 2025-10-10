@@ -6,18 +6,35 @@ import envoimagemobile from "@/app/pages/body/Navbar-page/bg-images/Envoy-Invest
 
 export default function HeroInvest() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between bg-white px-6 md:px-16 py-16 md:py-24 envoy-hero-wrapper">
-      {/* Left Text Section */}
-      <div className="max-w-lg space-y-6 text-center md:text-left copy-wrapper">
-        <h1 className="text-sm font-semibold uppercase tracking-wide text-slate-600">
+    <section
+      className="relative flex items-center justify-center text-center px-6 md:px-16 h-[500px] md:h-[600px] bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden"
+      style={{
+        backgroundImage: `url(${envoimagemobile.src})`,
+      }}
+    >
+      {/* Desktop background override */}
+      <style jsx>{`
+        @media (min-width: 768px) {
+          section {
+            background-image: url(${envoimage.src});
+          }
+        }
+      `}</style>
+
+      {/* Dark overlay for contrast */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Centered content */}
+      <div className="relative z-10 max-w-2xl text-white space-y-6">
+        <h1 className="text-sm font-semibold uppercase tracking-wide text-green-300">
           Investment Account
         </h1>
 
-        <h2 className="text-4xl md:text-6xl font-bold text-black">
+        <h2 className="text-4xl md:text-6xl font-bold">
           Acorns Invest
         </h2>
 
-        <h3 className="text-lg md:text-xl text-gray-800">
+        <h3 className="text-lg md:text-xl">
           Easy, automated investing, starting with spare change.
         </h3>
 
@@ -27,23 +44,6 @@ export default function HeroInvest() {
         >
           Get started
         </a>
-      </div>
-
-      {/* Right Background Image Section */}
-      <div
-        className="relative mt-10 md:mt-0 w-full md:w-1/2 h-[400px] md:h-[550px] rounded-2xl bg-cover bg-center bg-no-repeat image-wrapper"
-        style={{
-          backgroundImage: `url(${envoimagemobile.src})`,
-        }}
-      >
-        {/* Desktop background override */}
-        <style jsx>{`
-          @media (min-width: 768px) {
-            .image-wrapper {
-              background-image: url(${envoimage.src});
-            }
-          }
-        `}</style>
       </div>
     </section>
   );

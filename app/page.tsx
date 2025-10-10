@@ -1,10 +1,26 @@
-import Image from "next/image";
-import Hero from "@/app/pages/body/HeroSection"
+// app/page.tsx
+import Hero from "./pages/body/HeroSection";
+import Potential from "./pages/body/Potential";
+import InvestmentCalculator from "./pages/body/InvestmentCal";
+import RoundUps from "./pages/body/RoundsUp";
+import Portfolio from "./pages/body/Portfolio";
+import More from "./pages/body/More";
+import Protection from "./pages/body/Protection";
+import HeroCompounding from "./pages/body/HeroCompound";
+import HighlightedText from "./pages/body/HighlightedText";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      {/* <Hero /> */}
-    </div>
+    <>
+      <Hero />
+      <Potential />
+      <InvestmentCalculator />
+      <RoundUps />
+      <Portfolio />
+      <More />
+      <Protection />
+      <HeroCompounding />
+      <HighlightedText />
+    </>
   );
 }

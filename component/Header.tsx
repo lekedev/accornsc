@@ -69,13 +69,15 @@ export default function Navbar() {
                         <p className="text-sm text-gray-500">Brokerage account</p>
                       </div>
                     </Link>
-                    <div className="flex flex-col items-center text-center hover:text-green-600 transition">
-                      <Banknote size={22} />
-                      <p className="font-semibold mt-2">
-                        Invest for retirement
-                      </p>
-                      <p className="text-sm text-gray-500">IRA account</p>
-                    </div>
+                    <Link href="/later" onClick={() => setOpenDropdown(null)} >
+                      <div className="flex flex-col items-center text-center hover:text-green-600 transition">
+                        <Banknote size={22} />
+                        <p className="font-semibold mt-2">
+                          Invest for retirement
+                        </p>
+                        <p className="text-sm text-gray-500">IRA accounts</p>
+                      </div>
+                    </Link>
                     <div className="flex flex-col items-center text-center hover:text-green-600 transition">
                       <Wallet size={22} />
                       <p className="font-semibold mt-2">Bank smarter</p>
