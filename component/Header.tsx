@@ -78,13 +78,15 @@ export default function Navbar() {
                         <p className="text-sm text-gray-500">IRA accounts</p>
                       </div>
                     </Link>
-                    <div className="flex flex-col items-center text-center hover:text-green-600 transition">
+                    <Link href ="/earn" onClick={() => setOpenDropdown(null)} >
+                      <div className="flex flex-col items-center text-center hover:text-green-600 transition">
                       <Wallet size={22} />
                       <p className="font-semibold mt-2">Bank smarter</p>
                       <p className="text-sm text-gray-500">
                         Checking & savings
                       </p>
                     </div>
+                    </Link>
                     <div className="flex flex-col items-center text-center hover:text-green-600 transition">
                       <Gift size={22} />
                       <p className="font-semibold mt-2">
@@ -125,14 +127,17 @@ export default function Navbar() {
                 <div className="absolute left-1/2 -translate-x-1 top-full mt-2 w-[900px] bg-white border-t border-gray-100 shadow-md rounded-xl transition-all duration-3000 ease-in-out
 ">
                   <div className="flex justify-center py-6 space-x-16 text-gray-800">
-                    <div className="flex flex-col items-center text-center hover:text-green-600 transition">
+                   <Link href="/early-earn" onClick={() => setOpenDropdown(null)} >
+                       <div className="flex flex-col items-center text-center hover:text-green-600 transition">
                       <Baby size={28} />
                       <p className="font-semibold mt-2">
                         Invest for your kids
                       </p>
                       <p className="text-sm text-gray-500">UGMA / UTMA</p>
                     </div>
-                    <div className="flex flex-col items-center text-center hover:text-green-600 transition">
+                   </Link>
+                    <Link href="/early" onClick={() => setOpenDropdown(null)} >
+                        <div className="flex flex-col items-center text-center hover:text-green-600 transition">
                       <GraduationCap size={28} />
                       <p className="font-semibold mt-2">
                         Build kids’ money skills
@@ -141,6 +146,7 @@ export default function Navbar() {
                         Debit card & learning app
                       </p>
                     </div>
+                    </Link>
                   </div>
                 </div>
               )}
