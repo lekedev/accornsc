@@ -1,87 +1,94 @@
 "use client";
+import Slider from "react-slick";
+import Image from "next/image";
+import crypto from "@/public/image/Acorns-LaterMatch.png";
+import invest from "@/public/image/Acorns-OIP.png";
+import future from "@/public/image/Acorns-OIP2.png"
+import kids from "@/public/image/Acorns-OIP3.png";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import cryptoBg from "@/component/image/Acorns-LaterMatch.jpg";
-import investBg from "@/component/image/Acorns-OIP.jpg";
-import kids from "@/component/image/Acorns-OIP2.jpg";
-import future from "@/component/image/Acorns-OIP3.jpg";
+const slides = [
+  {
+    id: 1,
+    title: "Acorns helps you save & invest",
+    body: "Invest spare change, invest while you bank, earn bonus investments, and more.",
+    btnText: "Get started",
+    link: "https://signup.acorns.com/",
+    image: invest,
+    tag: "",
+  },
+  {
+    id: 2,
+    title: "Invest in Bits of Bitcoin",
+    body: "Ride Bitcoin’s highs and ride out its lows with a Bitcoin-linked ETF.",
+    btnText: "Get started",
+    link: "https://signup.acorns.com/",
+    image: crypto,
+  },
+  {
+    id: 3,
+    title: "We’ll put our money into your future",
+    body: "Get a 3% IRA match on new contributions you make to your Acorns Later retirement account.",
+    btnText: "Get started",
+    link: "https://signup.acorns.com/",
+    image: future,
+    tag: "Acorns Later",
+  },
+  {
+    id: 4,
+    title: "Smart money and Debit cards for children",
+    body: "School your kids’  on the smart way to earn, save, spend with the Acorns Early.",
+    btnText: "Get starte",
+    link: "https://signup.acorns.com/",
+    image: kids,
+    tag: "Acorns Early",
+  }
+];
 
-// Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-export default function HeroSlider() {
-  const slides = [
-    {
-      id: 1,
-      bg: cryptoBg.src,
-      title: "Invest your spare change",
-      subtitle:
-        "Grow your money automatically by investing your everyday purchases.",
-      buttonText: "Get Started",
-    },
-    {
-      id: 2,
-      bg: investBg.src,
-      title: "Crypto made simple",
-      subtitle:
-        "Easily invest in a curated selection of cryptocurrencies, built for beginners.",
-      buttonText: "Explore Crypto",
-    },
-    {
-      id: 3,
-      bg: future.src,
-      title: "Secure your future",
-      subtitle:
-        "Plan for retirement with automated tools designed to help you save.",
-      buttonText: "Start Planning",
-    },
-    {
-      id: 4,
-      bg: kids.src,
-      title: "Invest in your kids",
-      subtitle:
-        "Open an investment account for your children and build generational wealth.",
-      buttonText: "Learn More",
-    },
-  ];
+export default function HeroCarousel() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+  };
 
   return (
-    <div className="w-full h-screen">
-      <Swiper
-        modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 4000 }}
-        pagination={{ clickable: true }}
-        loop={true}
-        className="w-full h-full"
-      >
+    <section className="relative overflow-hidden">
+      <Slider {...settings}>
         {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <div
-              className="w-full h-full bg-cover bg-center flex items-center justify-center"
-              style={{ backgroundImage: `url(${slide.bg})` }}
-            >
-              {/* Overlay */}
-              <div className="bg-black/50 w-full h-full flex items-center justify-center px-6">
-                <div className="text-center md:text-left max-w-2xl space-y-6 text-white">
-                  <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-                    {slide.title}
-                  </h1>
-                  <p className="text-lg md:text-xl text-gray-200">
-                    {slide.subtitle}
-                  </p>
-                  <div>
-                    <button className="bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition">
-                      {slide.buttonText}
-                    </button>
-                  </div>
-                </div>
-              </div>
+          <div key={slide.id} className="relative">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              width={1440}
+              height={821}
+              className="w-full h-[600px] object-cover"
+              priority
+            />
+            <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16 text-white z-20">
+              {slide.tag && (
+                <span className="uppercase text-sm font-semibold tracking-widest mb-2">
+                  {slide.tag}
+                </span>
+              )}
+              <h2 className="text-4xl md:text-6xl font-bold max-w-2xl">
+                {slide.title}
+              </h2>
+              <p className="mt-4 max-w-lg text-lg">{slide.body}</p>
+              <a
+                href={slide.link}
+                className="mt-6 bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition"
+              >
+                {slide.btnText}
+              </a>
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
-    </div>
+      </Slider>
+    </section>
   );
 }

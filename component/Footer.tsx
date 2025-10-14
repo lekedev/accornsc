@@ -2,8 +2,8 @@
 
 import { FaInstagram, FaFacebookF, FaTwitter, FaTiktok, FaYoutube } from "react-icons/fa";
 import Image from "next/image";
-import AcornsLogo2 from "@/component/image/Acorns-Footer-Logo-2x-2022.webp";
-import logo2 from "@/component/image/logo2.webp";
+import AcornsLogo2 from "@/public/image/Acorns-Footer-Logo-2x-2022.webp";
+import logo2 from "@/public/image/logo2.webp";
 
 
 

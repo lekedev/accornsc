@@ -1,125 +1,103 @@
 "use client";
 
-import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
-
-type Slide = {
-  id: string;
-  title: string;
-  icon: string;
-  image: string;
-  heading: string;
-  description: string;
-  buttonText: string;
-  bgColor: string;
-};
-
-const slides: Slide[] = [
-  {
-    id: "invest",
-    title: "INVEST",
-    icon: "https://sqy7rm.media.zestyio.com/Envoy-Home-Hero-Subs-Carousel-Icon-1.svg",
-    image: "https://sqy7rm.media.zestyio.com/Envoy-Home-Hero-Invest.webp",
-    heading: "Easy, automated investing",
-    description:
-      "Give your money a chance to work towards your financial goals with Round-Ups®, expert-built diversified portfolios, Recurring Investments, and more.",
-    buttonText: "Get started",
-    bgColor: "bg-[#e6e2d8]",
-  },
-  {
-    id: "later",
-    title: "LATER",
-    icon: "https://sqy7rm.media.zestyio.com/Envoy-Home-Hero-Subs-Carousel-Icon-2.svg",
-    image: "https://sqy7rm.media.zestyio.com/Envoy-Home-Hero-Later.webp",
-    heading: "Prepare for your future",
-    description:
-      "Plan ahead with automated retirement savings designed to grow your wealth over time.",
-    buttonText: "Start saving",
-    bgColor: "bg-[#f3efe7]",
-  },
-  {
-    id: "early",
-    title: "EARLY",
-    icon: "https://sqy7rm.media.zestyio.com/Envoy-Home-Hero-Subs-Carousel-Icon-3.svg",
-    image: "https://sqy7rm.media.zestyio.com/Envoy-Home-Hero-Early.webp",
-    heading: "Invest in your kids’ future",
-    description:
-      "Start investing for your children early with flexible, tax-advantaged accounts built to grow.",
-    buttonText: "Learn more",
-    bgColor: "bg-[#ede8df]",
-  },
-  {
-    id: "banking",
-    title: "BANKING",
-    icon: "https://sqy7rm.media.zestyio.com/Envoy-Home-Hero-Subs-Carousel-Icon-4.png",
-    image: "https://sqy7rm.media.zestyio.com/Envoy-Home-Hero-Banking.webp",
-    heading: "Smart banking with Acorns",
-    description:
-      "Spend smarter with Acorns Checking, designed to automatically save and invest as you go.",
-    buttonText: "Explore banking",
-    bgColor: "bg-[#f0ede8]",
-  },
-];
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function HeroSubsection() {
-  const [active, setActive] = useState("invest");
-
-  const currentSlide = slides.find((s) => s.id === active)!;
+  const slides = [
+    {
+      id: 1,
+      title: "Easy, automated investing",
+      subtitle: "PERSONAL INVESTING",
+      description:
+        "Give your money a chance to work towards your financial goals with Round-Ups®, expert-built, diversified portfolios, Recurring Investments, and more.",
+      image: "/hero-icons/invest.png",
+      link: "/invest",
+    },
+    {
+      id: 2,
+      title: "Later starts today",
+      subtitle: "INVESTING FOR RETIREMENT",
+      description:
+        "Invest for retirement with our easy Individual Retirement Accounts (IRAs) and get potential tax advantages.",
+      image: "/hero-icons/later.png",
+      link: "/later",
+    },
+    {
+      id: 3,
+      title: "Early for kids",
+      subtitle: "INVESTING FOR KIDS",
+      description:
+        "Time goes fast. Invest in the kids you love now. Start with $5 and give your kids an easy, automated head start.",
+      image: "/hero-icons/early.png",
+      link: "/early-invest",
+    },
+    {
+      id: 4,
+      title: "Banking that saves & invests for you",
+      subtitle: "BANKING",
+      description:
+        "Save with no hidden fees, invest spare change in real-time with every swipe of your Acorns debit card, and invest automatically from every paycheck.",
+      image: "/hero-icons/banking.png",
+      link: "/banking",
+    },
+  ];
 
   return (
-    <section className={`w-full ${currentSlide.bgColor} py-16 transition-colors duration-500`}>
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 gap-10">
-        {/* Left Navigation */}
-        <div className="flex lg:flex-col items-center justify-center gap-6 lg:gap-8">
+    <section className="relative bg-white py-20 overflow-hidden">
+      <div className="text-center mb-10">
+        <p className="text-xs font-semibold tracking-widest text-gray-600 uppercase">
+          Say Hello to Acorns
+        </p>
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
+          Save, invest and learn from one easy app
+        </h2>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={40}
+          slidesPerView={1}
+          autoplay={{ delay: 4000 }}
+          pagination={{ clickable: true }}
+          className="w-full"
+        >
           {slides.map((slide) => (
-            <button
-              key={slide.id}
-              onClick={() => setActive(slide.id)}
-              className={`flex flex-col items-center justify-center w-20 h-20 rounded-full transition-all duration-300 ${
-                active === slide.id
-                  ? "bg-green-600 text-white scale-110 shadow-lg"
-                  : "bg-gray-100 text-gray-700 hover:scale-105"
-              }`}
-            >
-              <Image
-                src={slide.icon}
-                alt={slide.title}
-                width={30}
-                height={30}
-                className={`mb-1 ${active === slide.id ? "invert brightness-0" : ""}`}
-              />
-              <span className="text-xs font-semibold">{slide.title}</span>
-            </button>
+            <SwiperSlide key={slide.id}>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+                <div className="md:w-1/2">
+                  <Image
+                    src={slide.image}
+                    alt={slide.subtitle}
+                    width={300}
+                    height={300}
+                    className="rounded-xl"
+                  />
+                </div>
+
+                <div className="md:w-1/2 text-left">
+                  <p className="text-sm text-gray-500 font-semibold uppercase">
+                    {slide.subtitle}
+                  </p>
+                  <h3 className="text-2xl font-bold text-gray-800 mt-2 mb-3">
+                    {slide.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">{slide.description}</p>
+                  <a
+                    href={slide.link}
+                    className="inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition-all"
+                  >
+                    Get started
+                  </a>
+                </div>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
-
-        {/* Center Phone */}
-        <div className="relative flex justify-center items-center">
-          <div className="relative w-[260px] sm:w-[280px] md:w-[320px] h-[550px]">
-            <Image
-              src={currentSlide.image}
-              alt={currentSlide.title}
-              fill
-              className="object-contain transition-all duration-500"
-            />
-          </div>
-        </div>
-
-        {/* Right Text Section */}
-        <div className="max-w-md text-center lg:text-left">
-          <p className="uppercase text-sm font-semibold tracking-widest text-gray-600">
-            PERSONAL {currentSlide.title}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-            {currentSlide.heading}
-          </h2>
-          <p className="text-gray-700 mt-4 leading-relaxed">
-            {currentSlide.description}
-          </p>
-          <button className="mt-6 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition">
-            {currentSlide.buttonText}
-          </button>
-        </div>
+        </Swiper>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import roundupsImg from "@/component/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
+import roundupsImg from "@/public/image/Home1.png";
 
 export default function RoundUps() {
   return (

@@ -3,63 +3,67 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import phone from "@/public/image/Closing-Signup.png"; // phone mockup
+import treeRing from "@/public/image/Tree-Asset.png";  // background texture
+import woman from "@/public/image/woman-cup.png";      // lifestyle photo
 
 export default function ClosingSignup() {
   return (
-    <section className="relative bg-[#4CAF50] overflow-hidden text-white py-16 md:py-24">
-      {/* Copy Section */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 px-6">
-        {/* Text Content */}
-        <div className="z-10 md:w-1/2 space-y-4">
-          <p className="uppercase text-sm font-semibold tracking-wider">
-            Join the Movement
+    <section className="relative bg-[#4CAF50] overflow-hidden">
+      {/* Background Tree Ring */}
+      <div className="absolute inset-0">
+        <Image
+          src={treeRing}
+          alt="Tree ring texture"
+          fill
+          className="object-cover opacity-40"
+          priority
+        />
+      </div>
+
+      {/* Main Content */}
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-12 py-20 md:py-28">
+        {/* Left side - Phone mockup */}
+        <div className="w-full md:w-1/2 flex justify-center md:justify-start mt-10 md:mt-0">
+          <Image
+            src={phone}
+            alt="Acorns app on phone"
+            width={360}
+            height={360}
+            className="object-contain drop-shadow-lg"
+            priority
+          />
+        </div>
+
+        {/* Right side - Text content */}
+        <div className="w-full md:w-1/2 text-center md:text-left space-y-5">
+          <p className="uppercase text-white font-semibold tracking-widest text-sm">
+            Join the movement
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-snug">
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
             We’re changing the way Americans save & invest every day
-          </h2>
+          </h1>
 
           <Link
             href="https://signup.acorns.com/"
             target="_blank"
-            className="inline-block bg-white text-[#4CAF50] font-semibold px-6 py-3 rounded-full mt-4 hover:bg-gray-100 transition"
+            className="inline-block bg-white text-[#4CAF50] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition"
           >
             Sign up today
           </Link>
         </div>
+      </div>
 
-        {/* Image Section */}
-        <div className="relative flex justify-center md:justify-end md:w-1/2">
-          {/* Tree Image */}
-          <div className="absolute -bottom-6 -left-10 hidden md:block">
-            <Image
-              src="/images/tree.png"
-              alt="Tree stump"
-              width={300}
-              height={300}
-              className="object-contain opacity-90"
-            />
-          </div>
-
-          {/* Phone Image */}
-          <Image
-            src="/images/phone.png"
-            alt="Phone image"
-            width={400}
-            height={300}
-            className="object-contain z-20"
-          />
-
-          {/* Lifestyle Image (woman holding phone) */}
-          <div className="absolute bottom-0 right-0 hidden lg:block">
-            <Image
-              src="/component/image/pic3.avif"
-              alt="Woman holding phone"
-              width={280}
-              height={280}
-              className="object-contain"
-            />
-          </div>
-        </div>
+      {/* Right overlay image (woman holding phone) */}
+      <div className="absolute hidden lg:block right-0 top-1/2 -translate-y-1/2 rounded-l-3xl overflow-hidden">
+        <Image
+          src={woman}
+          alt="Woman holding phone and coffee"
+          width={420}
+          height={420}
+          className="object-cover"
+          priority
+        />
       </div>
     </section>
   );

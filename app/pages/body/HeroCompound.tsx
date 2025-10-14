@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import home5 from "@/public/image/home5.png"
 
 export default function HeroCompounding() {
   return (
@@ -31,7 +32,7 @@ export default function HeroCompounding() {
         >
           <div className="relative w-[260px] sm:w-[300px] md:w-[380px] drop-shadow-xl">
             <Image
-              src="/components/image/adc21d56-eabb-4d7f-91c2-54c073469f36.png"
+              src={home5}
               alt="Acorns Compounding Example"
               width={400}
               height={700}

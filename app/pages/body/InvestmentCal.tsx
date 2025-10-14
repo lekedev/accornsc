@@ -14,6 +14,7 @@ import {
 } from "recharts";
 import { Share2 } from "lucide-react";
 import Image from "next/image";
+import AcornLogo from "@/public/image/Logo1.png"
 
 export default function InvestmentCalculator() {
   const [initialDeposit, setInitialDeposit] = useState(100);
@@ -86,7 +87,25 @@ export default function InvestmentCalculator() {
   };
 
   return (
-    <div className="h-screen grid grid-cols-1 md:grid-cols-5">
+    <>
+
+        <section className="w-full bg-white py-12 md:py-16">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <p className="text-green-600 font-semibold tracking-wide uppercase text-sm mb-2">
+              Calculate your estimate
+            </p>
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
+              See your potential
+            </h1>
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+              Check out our compound interest calculator to see just how much the power of time and compound interest can help your money grow.
+            </p>
+          </div>
+        </section>
+      
+      <div className="h-screen grid grid-cols-1 md:grid-cols-5">
+
+      
       {/* Inputs (40%) */}
       <div className="p-8 space-y-6 md:col-span-2 shadow-lg">
         {/* Initial Deposit */}
@@ -162,7 +181,7 @@ export default function InvestmentCalculator() {
               }}
             >
               <Image
-                src="/acorn.png"
+                src={AcornLogo}
                 alt="Acorn"
                 width={24}
                 height={24}
@@ -233,7 +252,7 @@ export default function InvestmentCalculator() {
         {/* Share Button */}
         <button
           onClick={handleShare}
-          className="mt-6 flex items-center gap-2 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+          className="mt-6 flex items-center gap-2 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700"
         >
           <Share2 size={18} /> Share Result
         </button>
@@ -250,5 +269,6 @@ export default function InvestmentCalculator() {
         </p>
       </div>
     </div>
+    </>
   );
 }

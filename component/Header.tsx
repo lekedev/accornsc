@@ -13,7 +13,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import Image from "next/image";
-import logo1 from "@/component/image/Logo1.png";
+import logo1 from "@/public/image/Logo1.png";
 import Link from "next/link";
 
 export default function Navbar() {

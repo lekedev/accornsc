@@ -1,65 +1,65 @@
-// src/components/Potential.tsx
 "use client";
 
-import React from "react";
 import Image from "next/image";
+import forbesLogo from "@/public/image/Forbes-logo.svg";
+import timeLogo from "@/public/image/Time-logo.svg";
+import cnbcLogo from "@/public/image/CNBC-logo.svg";
 
-export default function Potential() {
+export default function SocialProofBanner() {
+  const logos = [
+    {
+      id: 1,
+      tagline: "As seen in",
+      logo: forbesLogo,
+      alt: "Forbes logo",
+    },
+    {
+      id: 2,
+      tagline: "World’s Best Brands 2024",
+      logo: timeLogo,
+      alt: "Time logo",
+    },
+    {
+      id: 3,
+      tagline: "As seen in",
+      logo: cnbcLogo,
+      alt: "CNBC logo",
+    },
+  ];
+
   return (
-    <section className="bg-white text-gray-900 py-16">
-      <div className="container mx-auto px-6 text-center">
-        
-        {/* Logos Row */}
-        <div className="flex justify-center md:justify-end gap-8 mb-10 flex-wrap">
-          <span className="text-sm text-gray-600 flex items-center gap-2">
-            <Image
-              src="/forbes.png"
-              alt="Forbes"
-              width={100}
-              height={24}
-              className="h-6 w-auto"
-            />
-            <span>As seen in Forbes</span>
-          </span>
-
-          <span className="text-sm text-gray-600 flex items-center gap-2">
-            <Image
-              src="/time.png"
-              alt="Time"
-              width={100}
-              height={24}
-              className="h-6 w-auto"
-            />
-            <span>Best Brands 2024</span>
-          </span>
-
-          <span className="text-sm text-gray-600 flex items-center gap-2">
-            <Image
-              src="/cnbc.png"
-              alt="CNBC"
-              width={100}
-              height={24}
-              className="h-6 w-auto"
-            />
-            <span>As seen in CNBC</span>
-          </span>
+    <>
+       <section className="w-full bg-gray-50 py-6 border-t border-gray-200">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <p className="text-gray-600 text-sm leading-relaxed">
+            Acorns is not a bank. Acorns Visa™ debit cards are issued by Lincoln Savings Bank or nbkc bank, Members FDIC for Acorns Checking account holders.
+          </p>
         </div>
-
-        {/* Heading */}
-        <p className="uppercase tracking-wide text-green-600 font-semibold mb-6">
-          Calculate your estimate
-        </p>
+      </section>
+      <section className="w-full bg-black py-10 border-t border-gray-100">
         
-        <h1 className="text-3xl sm:text-4xl font-medium mb-2">
-          See your potential
-        </h1>
- 
-        {/* Supporting Text */}
-        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-          Check out our compound interest calculator to see just how much the
-          power of time and compound interest can help your money grow.
-        </p>
-      </div>
-    </section>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 px-6">
+          {logos.map((item) => (
+            <a
+              key={item.id}
+              href="/press"
+              className="flex flex-col items-center text-center space-y-2 group"
+            >
+              <span className="text-sm text-green-700 font-semibold uppercase tracking-wide">
+                {item.tagline}
+              </span>
+              <div className="w-32 h-10 relative">
+                <Image
+                  src={item.logo}
+                  alt={item.alt}
+                  fill
+                  className="object-contain group-hover:opacity-80 transition"
+                />
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import portfolioImg from "@/component/image/Envoy-Home-CLIR-2.B1zBG0YjEee.avif";
+import portfolioImg from "@/public/image/home3.png";
 
 
  

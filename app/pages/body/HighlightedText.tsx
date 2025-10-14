@@ -4,10 +4,10 @@ import Image from "next/image";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import img1 from "@/component/image/pic1.avif";
-import img2 from "@/component/image/pic1.avif";
-import img3 from "@/component/image/pic1.avif";
-import img4 from "@/component/image/pic1.avif";
+import img1 from "@/public/image/pic4.png";
+import img2 from "@/public/image/pic2.png";
+import img3 from "@/public/image/pic3.png";
+import img4 from "@/public/image/pic4.png";
 
 export default function HighlightedText() {
   const { ref, inView } = useInView({
@@ -18,7 +18,7 @@ export default function HighlightedText() {
   return (
     <section
       ref={ref}
-      className="relative bg-[#1e293b] text-white overflow-hidden py-20 px-6 md:px-10 rounded-2xl"
+      className="relative bg-[#1e293b] w-full text-white overflow-hidden py-20 px-6 md:px-10 rounded-2xl"
     >
       {/* Text Section */}
       <motion.div
