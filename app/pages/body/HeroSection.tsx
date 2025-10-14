@@ -37,7 +37,7 @@ const slides = [
     id: 4,
     title: "Smart money and Debit cards for children",
     body: "School your kids’  on the smart way to earn, save, spend with the Acorns Early.",
-    btnText: "Get starte",
+    btnText: "Get started",
     link: "https://signup.acorns.com/",
     image: kids,
     tag: "Acorns Early",
@@ -79,12 +79,14 @@ export default function HeroCarousel() {
                 {slide.title}
               </h2>
               <p className="mt-4 max-w-lg text-lg">{slide.body}</p>
-              <a
+             <div className="flex">
+               <a
                 href={slide.link}
-                className="mt-6 bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition"
+                className=" mt-6 bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition"
               >
                 {slide.btnText}
               </a>
+             </div>
             </div>
           </div>
         ))}

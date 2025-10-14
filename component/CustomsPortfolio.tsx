@@ -11,10 +11,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 
-import slide1 from "@/component/image/Acorns-OIP.jpg";
-import slide2 from "@/component/image/Acorns-OIP.jpg";
-import slide3 from "@/component/image/Acorns-OIP.jpg";
-import slide4 from "@/component/image/Acorns-OIP.jpg";
+import slide1 from "@/public/image/Acorns-OIP.jpg";
+import slide2 from "@/public/image/Acorns-OIP.jpg";
+import slide3 from "@/public/image/Acorns-OIP.jpg";
+import slide4 from "@/public/image/Acorns-OIP.jpg";
 
 export default function CustomPortfolios() {
   const slides = [

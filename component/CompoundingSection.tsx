@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import compoundingImage from "@/component/image/Acorns-LaterMatch.jpg";
+import compoundingImage from "@/public/image/Acorns-LaterMatch.png";
 import { motion } from "framer-motion";
 
 export default function CompoundingSection() {

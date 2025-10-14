@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import SecurityImg from "@/component/image/pic5.avif";
+import SecurityImg from "@/public/image/pic5.png";
 
 export default function SecurityProtection() {
   return (

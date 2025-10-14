@@ -4,8 +4,8 @@ import Image from "next/image";
 import React from "react";
 import { Banknote, BarChart3 } from "lucide-react"; 
 
-import bluePerformance from "@/component/image/Hero-subs-carousel.webp"; 
-import greenInvest from "@/component/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif"; 
+import bluePerformance from "@/public/image/Hero-subs-carousel.webp"; 
+import greenInvest from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif"; 
 
 export default function TwoColumnContent() {
   return (

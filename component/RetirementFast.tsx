@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react"; 
-import retireImg from "@/component/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
+import retireImg from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
 
 export default function RetirementFastEasy() {
   return (

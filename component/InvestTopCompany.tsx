@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import InvestImage from "@/component/image/Acorns-OIP3.jpg";
+import InvestImage from "@/public/image/Acorns-OIP3.jpg";
 
 export default function InvestTopCompanies() {
   return (

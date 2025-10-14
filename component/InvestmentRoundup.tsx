@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import roundsupimage from "@/component/image/Acorns-OIP2.jpg";
+import roundsupimage from "@/public/image/Acorns-OIP2.jpg";
 
 export default function InvestRoundUps() {
   return (

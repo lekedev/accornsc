@@ -3,10 +3,10 @@
 import Image from "next/image";
 import React from "react";
 
-import heroDesktopAvif from "@/component/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
-import heroDesktopPng from "@/component/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
-import heroMobileAvif from "@/component/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
-import heroMobilePng from "@/component/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
+import heroDesktopAvif from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
+import heroDesktopPng from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
+import heroMobileAvif from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
+import heroMobilePng from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
 
 export default function HeroInvestSubsection() {
   return (

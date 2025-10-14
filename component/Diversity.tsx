@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import DiversifiedImg from "@/component/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
+import DiversifiedImg from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
 
 export default function DiversifiedMix() {
   return (

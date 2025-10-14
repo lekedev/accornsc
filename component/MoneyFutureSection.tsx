@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import matchImage from "@/component/image/Acorns-LaterMatch.jpg"; // replace with your local image if preferred
+import matchImage from "@/public/image/Acorns-LaterMatch.png"; // replace with your local image if preferred
 
 export default function MoneyFutureSection() {
   return (

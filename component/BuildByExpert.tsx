@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import ExpertsImg from "@/component/image/pic3.avif";
+import ExpertsImg from "@/public/image/pic3.png";
 
 export default function BuiltByExperts() {
   return (
