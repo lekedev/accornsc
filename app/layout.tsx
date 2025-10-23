@@ -1,20 +1,11 @@
 import "./globals.css";
 import Header from "@/component/Header";
 import Footer from "@/component/Footer";
-// import Hero from "./pages/body/HeroSection";
-// import Potential from "./pages/body/Potential";
-// import InvestmentCalculator from "./pages/body/InvestmentCal";
-// import RoundUps from "./pages/body/RoundsUp";
-// import Portfolio from "./pages/body/Portfolio";
-// import More from "./pages/body/More";
-// import Protection from "./pages/body/Protection";
-// import HeroCompounding from "./pages/body/HeroCompound";
-// import HighlightedText from "./pages/body/HighlightedText";
 import FooterLegal from "./pages/body/foot";
 
 export const metadata = {
-  title: "Acorns Clone",
-  description: "Micro-investing app clone built with Next.js + Tailwind",
+  title: "Acorns",
+  description: "Micro-investing app",
 };
 
 export default function RootLayout({

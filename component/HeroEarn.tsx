@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import EarnMobile from "@/app/earn/Earn-Mobile-Opt.webp";
-import EarnDesktop from "@/app/earn/Earn-Desktop-Opt.jpg";
+import EarnDesktop from "@/public/image/Earn-Desktop.avif";
 
 export default function HeroEarn() {
   return (

@@ -3,47 +3,45 @@
 import Image from "next/image";
 import React from "react";
 
-import heroDesktopAvif from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
-import heroDesktopPng from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
-import heroMobileAvif from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
-import heroMobilePng from "@/public/image/Envoy-Home-Personal-Investing--1-.SJzHMRtj4el.avif";
-
-export default function HeroInvestSubsection() {
+export default function HeroSubsection() {
   return (
-    <section className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden bg-white">
-      {/* Text content */}
-      <div className="absolute z-10 px-6 md:px-0 top-1/2 -translate-y-1/2 w-full">
-        <div className="space-y-4">
-          <div className="text-sm md:text-base font-semibold uppercase tracking-wide text-slate-600">
-            SAVE &amp; INVEST EVERY DAY
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-slate-800 leading-tight">
-            Smart <br className="block md:hidden" />
-            investing made Acorns-easy
-          </h2>
-        </div>
+    <section className="relative flex flex-col md:flex-row items-center justify-between bg-white text-gray-900 overflow-hidden py-16 px-6 md:px-16">
+      {/* === Left Text Section === */}
+      <div className="z-10 max-w-xl space-y-4">
+        <p className="text-sm uppercase font-semibold tracking-wider text-gray-600">
+          SAVE & INVEST EVERY DAY
+        </p>
+
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          Smart{" "}
+          <br className="block md:hidden" />
+          investing made{" "}
+          <span className="text-green-600">Acorns-easy</span>
+        </h1>
       </div>
 
-      {/* Responsive image */}
-      <div className="relative w-full h-[550px] md:h-[700px]">
-        {/* Mobile image */}
-        <div className="block md:hidden">
+      {/* === Right Image Section === */}
+      <div className="relative w-full md:w-1/2 mt-10 md:mt-0">
+        {/* Desktop Image */}
+        <div className="hidden md:block">
           <Image
-            src={heroMobileAvif || heroMobilePng}
+            src="https://sqy7rm.media.zestyio.com/Envoy-Invest-Hero-Updt4-Opt--2025-.png"
             alt="Group of images showing people investing"
-            fill
-            className="object-contain"
+            width={2880}
+            height={1846}
+            className="object-cover w-full"
             priority
           />
         </div>
 
-        {/* Desktop image */}
-        <div className="hidden md:block">
+        {/* Mobile Image */}
+        <div className="md:hidden">
           <Image
-            src={heroDesktopAvif || heroDesktopPng}
+            src="https://sqy7rm.media.zestyio.com/Envoy-Invest-Hero-Updt4-Mob--2025-.png"
             alt="Group of images showing people investing"
-            fill
-            className="object-contain"
+            width={1125}
+            height={2082}
+            className="object-cover w-full"
             priority
           />
         </div>
