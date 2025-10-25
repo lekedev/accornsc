@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import React from "react";
+import HeroInvest from "@/public/image/EnvoyHero.webp";
+import HeroInvestHeroMob from "@/public/image/EnvoyinvestHeroMob.webp"
 
 export default function HeroSubsection() {
   return (
@@ -25,7 +27,7 @@ export default function HeroSubsection() {
         {/* Desktop Image */}
         <div className="hidden md:block">
           <Image
-            src="https://sqy7rm.media.zestyio.com/Envoy-Invest-Hero-Updt4-Opt--2025-.png"
+            src={HeroInvest}
             alt="Group of images showing people investing"
             width={2880}
             height={1846}
@@ -37,7 +39,7 @@ export default function HeroSubsection() {
         {/* Mobile Image */}
         <div className="md:hidden">
           <Image
-            src="https://sqy7rm.media.zestyio.com/Envoy-Invest-Hero-Updt4-Mob--2025-.png"
+            src={HeroInvestHeroMob}
             alt="Group of images showing people investing"
             width={1125}
             height={2082}
