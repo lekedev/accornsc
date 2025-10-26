@@ -1,10 +1,10 @@
 "use client";
 import Slider from "react-slick";
 import Image from "next/image";
-import crypto from "@/public/image/Acorns-LaterMatch.png";
-import invest from "@/public/image/Acorns-OIP.png";
-import future from "@/public/image/Acorns-OIP2.png"
-import kids from "@/public/image/Acorns-OIP3.png";
+import crypto from "@/public/image/Home-Bitcoin_Desktop.avif";
+import invest from "@/public/image/Revamp-Hero-Desktop.avif";
+import future from "@/public/image/Hero-Carousel-destop.avif";
+import kids from "@/public/image/Hero-Carousel-AE-Desk.avif";
 
 const slides = [
   {
@@ -35,13 +35,13 @@ const slides = [
   },
   {
     id: 4,
-    title: "Smart money and Debit cards for children",
-    body: "School your kids’  on the smart way to earn, save, spend with the Acorns Early.",
+    title: "Smart money app and debit card for kids",
+    body: "School your kids on the smart way to earn, save, and spend with Acorns Early.",
     btnText: "Get started",
     link: "https://signup.acorns.com/",
     image: kids,
     tag: "Acorns Early",
-  }
+  },
 ];
 
 export default function HeroCarousel() {
@@ -49,44 +49,53 @@ export default function HeroCarousel() {
     dots: true,
     infinite: true,
     autoplay: true,
-    speed: 600,
+    autoplaySpeed: 5000,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
   };
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative w-full overflow-hidden font-sans">
       <Slider {...settings}>
         {slides.map((slide) => (
-          <div key={slide.id} className="relative">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              width={1440}
-              height={821}
-              className="w-full h-[600px] object-cover"
-              priority
-            />
-            <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16 text-white z-20">
+          <div key={slide.id} className="relative w-full h-[92vh]">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                quality={100}
+                className="object-cover object-center brightness-95"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+            </div>
+
+            {/* Content */}
+            <div className="relative z-20 flex flex-col justify-center h-full px-6 md:px-20 text-white max-w-[720px] leading-snug">
               {slide.tag && (
-                <span className="uppercase text-sm font-semibold tracking-widest mb-2">
+                <span className="uppercase tracking-[0.15em] text-sm font-semibold mb-3 opacity-90">
                   {slide.tag}
                 </span>
               )}
-              <h2 className="text-4xl md:text-6xl font-bold max-w-2xl">
+
+              <h2 className="text-[2.8rem] md:text-[4rem] font-bold tracking-tight leading-[1.1]">
                 {slide.title}
               </h2>
-              <p className="mt-4 max-w-lg text-lg">{slide.body}</p>
-             <div className="flex">
-               <a
+
+              <p className="mt-5 text-lg md:text-xl text-white/90 leading-relaxed">
+                {slide.body}
+              </p>
+
+              <a
                 href={slide.link}
-                className=" mt-6 bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition"
+                className="mt-8 inline-block bg-[#00B863] text-white px-8 py-3.5 rounded-full font-semibold text-lg transition-all duration-200 hover:bg-[#00a25a] shadow-md"
               >
                 {slide.btnText}
               </a>
-             </div>
             </div>
           </div>
         ))}
