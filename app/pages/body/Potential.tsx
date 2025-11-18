@@ -29,7 +29,7 @@ export default function SocialProofBanner() {
 
   return (
     <>
-       <section className="w-full bg-gray-50 py-6 border-t border-gray-200">
+       <section className="w-full bg-gray-50 py-2 border-t border-gray-200">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-gray-600 text-sm leading-relaxed">
             Acorns is not a bank. Acorns Visa™ debit cards are issued by Lincoln Savings Bank or nbkc bank, Members FDIC for Acorns Checking account holders.

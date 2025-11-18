@@ -167,6 +167,24 @@ body {
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
+/* Slick Dots Styling */
+.custom-dots li button:before {
+  font-size: 10px;
+  color: white !important;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+.custom-dots li.slick-active button:before {
+  opacity: 1 !important;
+  color: white !important;
+  font-size: 11px;
+}
+.custom-dots {
+  margin: 0;
+  padding: 0;
+}
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
