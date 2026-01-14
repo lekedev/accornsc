@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { connectToDatabase } from "@/lib/mongodb";
+// import { connectToDatabase } from "@/lib/mongodb";
 import User from "@/models/User";
 
 export async function POST(req: Request) {
@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     if (!name || !email || !password)
       return NextResponse.json({ message: "All fields required" }, { status: 400 });
 
-    await connectToDatabase();
+    // await connectToDatabase();
 
     const existingUser = await User.findOne({ email });
     if (existingUser)
